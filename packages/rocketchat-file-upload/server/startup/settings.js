@@ -236,4 +236,14 @@ settings.addGroup('FileUpload', function() {
 		type: 'boolean',
 		public: true,
 	});
+
+	this.add('FileUpload_OfficeFileTypes', '.doc,.xls', {
+		type: 'string',
+		public: true,
+	});
+
+	this.add('FileUpload_MicrosoftPreviewUrl', 'http://view.officeapps.live.com/op/view.aspx', {
+		type: 'string',
+		public: true,
+	});
 });
