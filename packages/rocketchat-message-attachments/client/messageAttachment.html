@@ -54,6 +54,9 @@
 						{{#if title_link_download}}
 							<a class="icon-download attachment-download-icon" href="{{fixCordova title_link}}" target="_blank" download="" rel="noopener noreferrer"></a>
 						{{/if}}
+						{{#if isOfficeTypeFile}}
+							<a class="icon-link-ext attachment-download-icon" href="{{fixCordova filePreviewUrl}}" target="_blank" download="" rel="noopener noreferrer"></a>
+						{{/if}}
 					{{else}}
 						{{title}}
 					{{/if}}
