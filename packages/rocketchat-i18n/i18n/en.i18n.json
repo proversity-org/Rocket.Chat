@@ -3112,5 +3112,8 @@
   "Your_password_is_wrong": "Your password is wrong!",
   "Your_push_was_sent_to_s_devices": "Your push was sent to %s devices",
   "Your_server_link": "Your server link",
-  "Your_workspace_is_ready": "Your workspace is ready to use 🎉"
+  "Your_workspace_is_ready": "Your workspace is ready to use 🎉",
+  "FileUpload_OfficeFileTypes": "Supported file preview extensions.",
+  "FileUpload_MicrosoftPreviewUrl": "Microsoft viewer url."
 }
+

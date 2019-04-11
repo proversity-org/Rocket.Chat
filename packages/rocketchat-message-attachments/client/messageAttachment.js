@@ -79,4 +79,24 @@ Template.messageAttachment.helpers({
 		}
 		return false;
 	},
+	isOfficeTypeFile() {
+		const fileUploadOfficeTypes = RocketChat.settings.get('FileUpload_OfficeFileTypes');
+		const fileUploadOfficeTypesArray = fileUploadOfficeTypes.split(',');
+		const microsoftFilePreviewUrl = RocketChat.settings.get('FileUpload_MicrosoftPreviewUrl');
+		const fileUploadProtectedFiles = RocketChat.settings.get('FileUpload_ProtectFiles');
+		const rocketChatSiteUrl = RocketChat.settings.get('Site_Url');
+
+		if (fileUploadProtectedFiles || microsoftFilePreviewUrl === '') {
+			return false;
+		}
+
+		for (const type of fileUploadOfficeTypesArray) {
+			if (this.type === 'file' && this.title_link.endsWith(type) && Template.parentData().file) {
+				const absFileUrl = encodeURIComponent(`${ rocketChatSiteUrl }${ this.title_link }`);
+				this.filePreviewUrl = `${ microsoftFilePreviewUrl }?src=${ absFileUrl }`;
+				return true;
+			}
+		}
+		return false;
+	},
 });
